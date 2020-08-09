@@ -15,7 +15,7 @@ The following steps to be followed below ::
 	ii. 'data_prepare.py' : This module consist of the keyword extraction from the key phrases. Prediction of 1st label .
 	iii.  ‘Multilabel_predict.py' :  This consist of the prediction of the 2nd Label using the data from previous module.
 	iv.  ‘Final_Prediction.py’: This consist of the refined predicted results.
-(c) Running project Steps: Run scripts in the below order: 1. Final_Prediction.py 
+(c) Running project Steps: Run scripts in the below order: 1. data_preprocess.py , 2. Final_Prediction.py 
 Result files are below::
 updated_train_data_update1.csv --> This file contains the cleaned texts and extracted keywords.
 Result.csv --> This file contains the proposed approach for automatic multi-label classification of extracted keywords with the categories provided in cat_level.csv file.
