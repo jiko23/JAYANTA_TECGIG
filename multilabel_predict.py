@@ -95,7 +95,7 @@ text_labels = encoder.classes_ ## ORIGINAL LABELS
 
 df['Label_2'] = ""
 
-
+final_df = pd.DataFrame(columns=['id','category_tree'])
 
 for i in range(len(x_train1)) :
 
@@ -104,6 +104,15 @@ for i in range(len(x_train1)) :
 	predicted_label= text_labels[np.argmax(prediction[0])]
 
 	df.at[i, 'Label_2'] = predicted_label
+
+	tree_ = "{}^{}-->{}".format(df['Label_1'].loc[i],df['Label_2'].loc[i],df['keyword_set'].iloc[i])
+
+	final_df.at[i,'id'] =  df['id'].loc[i]
+
+	final_df.at[i, 'category_tree'] = tree_
+
+
+final_df.to_csv(r'E:\prog\analytic_vidya\segmentation\Result.csv') ## CONVERTING THE DATAFRAME INTO CSV FILE
 
 
 ######################################################################################################################## END ##################################################################################################################################	
