@@ -31,11 +31,10 @@ DESCRIPTION REGARDING THE APPROACH::
 
 This project is totally automated and it has been build with minimum involvement of any Natural Language Processing or NLTK libraries. This project has been developed keeping in mind about various challenges like cost effectiveness, automation with minimum human supervision, effective performance with advanced approach. This project has been developed completely using Python programming language, Tensorflow,  Keras,  Platform used is Anaconda.
 
-This project can be divided into 4 models as follows:
+This project can be divided into 3 models as follows:
 1>	Data Preprocessing
 2>	1st  Label/Category prediction using Unsupervised algorithm
 3>	Predicting 2nd Label/Category on the basis of the 1st predicted Label/Category
-4>	Predicting final Labels/Categories with utilization of previously predicted Labels/Categories
 
 
 Lets talk about the 1st module i.e. Data Preprocessing.  Normally people would be directly apply algorithms like TF-IDF or any NLTK/NLP based packages or libraries to extract keywords from a given sentence or description ,but, in this project the method followed is a bit different.
