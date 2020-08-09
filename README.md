@@ -14,8 +14,8 @@ The following steps to be followed below ::
 	i. 'data_preprocess.py' : It consists of data preprocessing steps,translation of data(text) to english language. For translating to english language two different packages has been used: (i) textblob, (ii) googletrans . To avoid putting much load on one translator try-except method has been used. It is recommended that internet connection must be very strong for large dataset translation. Key_phrase extraction has been also done here. Finally the preprocessed data has been converted to .csv file. (Kindly change the saving address as per yourself)
 	ii. 'data_prepare.py' : This module consist of the keyword extraction from the key phrases. Prediction of 1st label .
 	iii.  ‘Multilabel_predict.py' :  This consist of the prediction of the 2nd Label using the data from previous module.
-	iv.  ‘Final_Prediction.py’: This consist of the refined predicted results.
-(c) Running project Steps: Run scripts in the below order: 1. data_preprocess.py , 2. Final_Prediction.py 
+
+(c) Running project Steps: Run scripts in the below order: 1. data_preprocess.py , 2. multilabel_predict.py 
 Result files are below::
 updated_train_data_update1.csv --> This file contains the cleaned texts and extracted keywords.
 Result.csv --> This file contains the proposed approach for automatic multi-label classification of extracted keywords with the categories provided in cat_level.csv file.
@@ -81,11 +81,6 @@ In this module the target values were the categories from the 2nd module. Activa
 Here, ‘keyword_set’ has been taken as feature and Label_1 as target. User has been given the flexibility to predict the 1st label from this module. Just mention the test feature and tokenize the test feature as per the training feature and predict using the test dataset. Also during training mention the validation split.
 Now from this layer we will get the 2nd label. A new column named Label_2 has been added to the existing dataframe  and passed to the next module as input data.
 
-
-Now lets talk about our 4th module i.e. Predicting final Labels/Categories with utilization of previously predicted Labels/Categories .
-
-In this module we use LSTM network to refine out previously predicted labels/categories.
-The difference between 3rd module and 4th module Neural Network architecture is that in 3rd module we took single column as the target value as we had to predict the 2nd label, but, in this module as we will be refining our resutls, we took both Lable_1 and Label_2 as our target columns. Now while prediction we well take the maximum probabilities from separate output layers and they will be our final labels i.e. refined results.
 
 Finally we will create a new dataframe with two columns named ‘id’ and ‘category tree’ and place the  id of each feature data and labels as per the guideline to the category_tree column.
 
