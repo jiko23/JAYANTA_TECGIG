@@ -232,7 +232,7 @@ a = np.array(padding(seperated_words, 'End'))	## Performing padding to match the
 '''
 	Generating random weights for Fuzzy C-Mean algorithm.
 '''
-np.random.seed(0)
+np.random.seed(1)
 
 weights_ = [] ##weights for the algorithm.
 
